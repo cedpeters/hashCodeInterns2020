@@ -1,7 +1,7 @@
 class Endpoint:
 	def __init__(self, id, datacenterLatency):
 		self.id = id
-		self.datacenterLatency
+		self.datacenterLatency = datacenterLatency
 		self.links = []
 
 	def set_videos(self, videos):

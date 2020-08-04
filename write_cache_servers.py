@@ -1,0 +1,1 @@
+def write(results: dict) -> None:

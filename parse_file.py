@@ -59,7 +59,10 @@ def parse() -> dict:
         	else if(currentLine == 1):
         		videoSizes = line.split()
         	
+
         	else if(!(endpoints.size == nEndpoints) || latenciesLeft != 0 ):
+        		if(latenciesLeft == 0)
+        				currentEndpoint == null
         		if(currentEndpoint == null):
         			endpointInfo = line.split()
         			currentEndpoint = Endpoint(nextEndpointId, int(endpointInfo[0]))
@@ -67,12 +70,11 @@ def parse() -> dict:
         			latenciesLeft = int(endpointInfo[1])
 
         		else:
-        			if(latenciesLeft == 0)
-        				currentEndpoint == null
         			latencyInfo = line.split()
         			newLink = Link(latencyInf0[1],caches[latencyInfo[0]], currentEndpoint)	
         			currentEndpoint.add_link(newLink)
         			caches[latencyInfo[0]].add_link(newLink)
+        			latenciesLeft--
 
 
 
